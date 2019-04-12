@@ -1,26 +1,35 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './App.css';
+
+import CreateRecipe from "./components/Create/Create";
+import EditRecipe from "./components/Edit/Edit";
+import RecipeFeed from "./components/Feed/Feed";
+
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Router>
+        <div className= "container">
+        <nav>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="#">Roulette</a></li>
+        <li><a href="/create">Contribute</a></li>
+        <li><a href="#">Favorites</a></li>
+        <li><a href="#">log in</a></li>
+      </ul>
+    </nav>
+        <h1>VirCoo</h1>
+        <h2>A living cookbook, Powered by you!</h2>
+
+        </div>
+        <Route path="/" exact component={RecipeFeed} />
+        <Route path="/edit/:id" component={EditRecipe} />
+        <Route path="/create" component={CreateRecipe} />
+      </Router>
     );
   }
 }
