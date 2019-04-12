@@ -77,8 +77,19 @@ export default class CreateFeed extends Component {
                             onChange={this.onChangeRecipeTitle}>
                     </input>
                 </div>
+                <div style={{marginTop: 10 }}>
+                <h3>Submit New Recipe</h3>
+               
+                    <label>Prep Time: </label>
+                    <input  type="text"
+                            className="form-control"
+                            value={this.state.recipe_time}
+                            onChange={this.onChangeRecipeTime}>
+                    </input>
+                </div>
                 </form>
-            </div>
+         
+        </div>
         )
-    }
+    };
 }
