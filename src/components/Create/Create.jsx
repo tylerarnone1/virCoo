@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-export default class CreateFeed extends Component {
+export default class CreateRecipe extends Component {
 
     constructor(props) {
         super(props);
@@ -11,10 +11,11 @@ export default class CreateFeed extends Component {
             this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
+            recipe_title: '',
             recipe_directions: '',
             recipe_ingrediance: '',
             recipe_time: '',
-            recipe_favorites: false
+            recipe_favorites: '',
         }
     }
 
@@ -49,11 +50,11 @@ export default class CreateFeed extends Component {
 
         console.log(`Form submitted`)
         console.log(`title: ${this.sate.recipe_title}`);
-        console.log(`directions: ${this.sate.recipe_direction}`);
+        console.log(`directions: ${this.sate.recipe_directions}`);
         console.log(`ingrediance: ${this.sate.recipe_ingrediance}`);
         console.log(`time: ${this.sate.recipe_time}`);
         console.log(`favorites: ${this.sate.recipe_favorites}`);
-        console.log(`directions: ${this.sate.recipe_direction}`);
+        
 
         this.setState({
             recipe_title: '',
@@ -77,14 +78,50 @@ export default class CreateFeed extends Component {
                             onChange={this.onChangeRecipeTitle}>
                     </input>
                 </div>
-                <div style={{marginTop: 10 }}>
-                <h3>Submit New Recipe</h3>
-               
+            
                     <label>Prep Time: </label>
                     <input  type="text"
                             className="form-control"
                             value={this.state.recipe_time}
                             onChange={this.onChangeRecipeTime}>
+                    </input>
+                    <label>ingrediance: </label>
+                    <input  type="text"
+                            className="form-control"
+                            value={this.state.recipe_ingrediance}
+                            onChange={this.onChangeRecipeIngrediance}>
+                    </input>
+                    <label>directions: </label>
+                    <input  type="text"
+                            className="form-control"
+                            value={this.state.recipe_directions}
+                            onChange={this.onChangeRecipeDirection}>
+                    </input>
+               
+                <div className="form-group">
+                    <div className="form-check form-check-inline">
+                        <input className="form-check-input"
+                                type="radio"
+                                name="FavOptions"
+                                value="no"
+                                checked={this.state.recipe_favorites==='no'}
+                                onChange={this.onChangeRecipeFavorite} />
+
+                            <label className="form-check-label">no</label>
+                    </div>
+                   
+                    <div className="form-check form-check-inline"></div>
+                        <input className="form-check-input"
+                                type="radio"
+                                name="FavOptions"
+                                value="yes"
+                                checked={this.state.recipe_favorites==='yes'}
+                                onChange={this.onChangeRecipeFavorite} />
+
+                            <label className="form-check-label">yes</label>
+                </div>
+                <div className="form-group">
+                    <input type="submit" vlaue="Submit" className="btn btn-primary">
                     </input>
                 </div>
                 </form>

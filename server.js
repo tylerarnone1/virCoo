@@ -2,12 +2,15 @@ const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
+const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const app = express();
 
 app.use(logger('dev'));
 app.use(express.json());
-
+app.use(cors());
+app.use(bodyParser.json);
 // Configure both serve-favicon & static middlewares
 // to serve from the production 'build' folder
 app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
