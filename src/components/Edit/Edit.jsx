@@ -9,7 +9,7 @@ export default class EditRecipe extends Component {
         this.state = {
             recipe_title: '',
             recipe_directions: '',
-            recipe_ingrediants: '',
+            recipe_ingredients: '',
             recipe_time: '',
             recipe_favorites: false
         
@@ -42,9 +42,9 @@ export default class EditRecipe extends Component {
                 recipe_directions: e.target.value
             });
         }
-        onChangeRecipeIngrediants(e) {
+        onChangeRecipeIngredients(e) {
             this.setState({
-                recipe_ingrediants: e.target.value
+                recipe_ingredients: e.target.value
             });
         }
         onChangeRecipeTime(e) {
@@ -54,8 +54,19 @@ export default class EditRecipe extends Component {
         }
         onChangeRecipeFavorite(e) {
             this.setState({
-                recipe_favorites: e.target.value
+                recipe_favorites: !this.state.recipe_favorites
             });
+        }
+
+        onSubmit(e) {
+            e.preventDefault();
+            const obj = {
+            recipe_title       : this.state.recipe_title,
+            recipe_directions  : this.state.recipe_directions,
+            recipe_time        : this.state.recipe_time,
+            recipe_ingredients : this.state.recipe_ingredients,
+            recipe_favorites   : this.state.recipe_favorites,
+            }
         }
   
     render() {
