@@ -32,7 +32,31 @@ export default class EditRecipe extends Component {
                 })
             
         }
-  
+        onChangeRecipeTitle(e) {
+            this.setState({
+                recipe_title: e.target.value
+            });
+        }
+        onChangeRecipeDirection(e) {
+            this.setState({
+                recipe_directions: e.target.value
+            });
+        }
+        onChangeRecipeIngrediants(e) {
+            this.setState({
+                recipe_ingrediants: e.target.value
+            });
+        }
+        onChangeRecipeTime(e) {
+            this.setState({
+                recipe_time: e.target.value
+            });
+        }
+        onChangeRecipeFavorite(e) {
+            this.setState({
+                recipe_favorites: e.target.value
+            });
+        }
   
     render() {
         return (
@@ -70,7 +94,7 @@ export default class EditRecipe extends Component {
                                 name="FavOptions"
                                 value="no"
                                 checked={this.state.recipe_favorites==='no'}
-                                onChange={this.onChangeRecipeFavorite} />
+                                onChange={this.onChangeRecipeFavorites} />
 
                             <label className="form-check-label">no</label>
                     </div>
@@ -81,11 +105,27 @@ export default class EditRecipe extends Component {
                                 name="FavOptions"
                                 value="yes"
                                 checked={this.state.recipe_favorites==='yes'}
-                                onChange={this.onChangeRecipeFavorite} />
+                                onChange={this.onChangeRecipeFavorites} />
 
                             <label className="form-check-label">yes</label>
                    </div>
-                  
+                    <div className="form-check">
+                        <input type="checkbox"
+                                className="form-check-input"
+                                id="Checkbox"
+                                name="Checkbox"
+                                onChange={this.onChangeRecipeFavorites}
+                                checked={this.state.recipe_favorites}
+                                value={this.recipe_favorites} />
+
+                        <label className="form-check-label" htmlFor="Checkbox">
+                        Favorites
+                        </label>
+                    </div>
+                    <br/>
+                    <div className='form-group'>
+                        <imput type="submit" value="Update Recipe" className="btn btn-primaary"/>
+                    </div>
                 </form>
             </div>
         )
