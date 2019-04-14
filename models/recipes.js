@@ -4,21 +4,24 @@ var mongoose = require('mongoose');
  
 
 const RecipeSchema = new Schema({
-    Title: {
+    recipe_title: {
         type: String,
     },
-    Ingrediance:{
+    recipe_ingrediance:{
         type: Array,
         required: true
     },
-    CookTime: {
+    recipe_time: {
         type: Number,
 
     },
-    Instructions: {
+    recipe_directions: {
         type:  String,
             
         
+    },
+    recipe_favorites:{
+        type: Boolean,
     }
 
 });
