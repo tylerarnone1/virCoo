@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
  var Schema = mongoose.Schema;
  
 
-const RecipeSchema = new Schema({
+const Recipe = new Schema({
     recipe_title: {
         type: String,
     },
@@ -25,4 +25,4 @@ const RecipeSchema = new Schema({
     }
 
 });
-module.exports = mongoose.model('Recipe', RecipeSchema );
+module.exports = mongoose.model('Recipe', Recipe );

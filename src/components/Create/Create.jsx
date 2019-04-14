@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import axios from 'axios';
 
 export default class CreateRecipe extends Component {
 
@@ -15,7 +16,7 @@ export default class CreateRecipe extends Component {
             recipe_directions: '',
             recipe_ingrediance: '',
             recipe_time: '',
-            recipe_favorites: '',
+            recipe_favorites: false,
         }
     }
 
@@ -54,6 +55,17 @@ export default class CreateRecipe extends Component {
         console.log(`ingrediance: ${this.sate.recipe_ingrediance}`);
         console.log(`time: ${this.sate.recipe_time}`);
         console.log(`favorites: ${this.sate.recipe_favorites}`);
+        
+        const newRecipe = {
+            recipe_title       : this.staterecipe_title,
+            recipe_discription : this.state.recipe_discription,
+            recipe_time        : this.state.recipe_time,
+            recipe_ingrediance : this.state.recipe_ingrediance,
+            recipe_favorites   : this.state.recipe_favorites,
+        }
+        axios.post('http://localhost:3001/create', obj)
+        .then(res => console.log(res.data));
+    
         
 
         this.setState({
