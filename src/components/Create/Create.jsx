@@ -7,14 +7,15 @@ export default class CreateRecipe extends Component {
         super(props);
             this.onChangeRecipeTitle = this.onChangeRecipeTitle.bind(this);
             this.onChangeRecipeDirection = this.onChangeRecipeDirection.bind(this);
-            this.onChangeRecipeIngrediance = this.onChangeRecipeIngrediance.bind(this);
+            this.onChangeRecipeIngrediants = this.onChangeRecipeIngrediants.bind(this);
             this.onChangeRecipeTime = this.onChangeRecipeTime.bind(this);
+            this.onChangeRecipeFavorite = this.onChangeRecipeFavorite.bind(this);
             this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
             recipe_title: '',
             recipe_directions: '',
-            recipe_ingrediance: '',
+            recipe_ingrediants: '',
             recipe_time: '',
             recipe_favorites: false,
         }
@@ -30,9 +31,9 @@ export default class CreateRecipe extends Component {
             recipe_directions: e.target.value
         });
     }
-    onChangeRecipeIngrediance(e) {
+    onChangeRecipeIngrediants(e) {
         this.setState({
-            recipe_ingrediance: e.target.value
+            recipe_ingrediants: e.target.value
         });
     }
     onChangeRecipeTime(e) {
@@ -50,28 +51,29 @@ export default class CreateRecipe extends Component {
         e.preventDefault();
 
         console.log(`Form submitted`)
-        console.log(`title: ${this.sate.recipe_title}`);
-        console.log(`directions: ${this.sate.recipe_directions}`);
-        console.log(`ingrediance: ${this.sate.recipe_ingrediance}`);
-        console.log(`time: ${this.sate.recipe_time}`);
-        console.log(`favorites: ${this.sate.recipe_favorites}`);
+        console.log(`title: ${this.state.recipe_title}`);
+        console.log(`directions: ${this.state.recipe_directions}`);
+        console.log(`Ingrediants: ${this.state.recipe_ingrediants}`);
+        console.log(`time: ${this.state.recipe_time}`);
+        console.log(`favorites: ${this.state.recipe_favorites}`);
         
         const newRecipe = {
             recipe_title       : this.staterecipe_title,
-            recipe_discription : this.state.recipe_discription,
+            recipe_directions : this.state.recipe_directions,
             recipe_time        : this.state.recipe_time,
-            recipe_ingrediance : this.state.recipe_ingrediance,
+            recipe_ingrediants : this.state.recipe_ingrediants,
             recipe_favorites   : this.state.recipe_favorites,
         }
-        axios.post('http://localhost:3001/create', obj)
+        axios.post('http://localhost:3001/create', newRecipe)
         .then(res => console.log(res.data));
+        
     
         
 
         this.setState({
             recipe_title: '',
             recipe_directions: '',
-            recipe_ingrediance: '',
+            recipe_ingrediants: '',
             recipe_time: '',
             recipe_favorites: false
         })
@@ -97,11 +99,11 @@ export default class CreateRecipe extends Component {
                             value={this.state.recipe_time}
                             onChange={this.onChangeRecipeTime}>
                     </input>
-                    <label>ingrediance: </label>
+                    <label>Ingrediants: </label>
                     <input  type="text"
                             className="form-control"
-                            value={this.state.recipe_ingrediance}
-                            onChange={this.onChangeRecipeIngrediance}>
+                            value={this.state.recipe_Ingrediants}
+                            onChange={this.onChangeRecipeIngrediants}>
                     </input>
                     <label>directions: </label>
                     <input  type="text"

@@ -7,7 +7,7 @@ const Recipe = new Schema({
     recipe_title: {
         type: String,
     },
-    recipe_ingrediance:{
+    recipe_ingredients:{
         type: Array,
         required: true
     },

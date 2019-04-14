@@ -44,7 +44,7 @@ recipeRoutes.route('/update/:id').post(function (req, res) {
     else {
         recipe.recipe_title = req.body.recipe_title;
         recipe.recipe_directions = req.body.recipe_directions;
-        recipe.recipe_ingrediance = req.body.recipe_ingrediance;
+        recipe.recipe_ingredients = req.body.recipe_ingredients;
         recipe.recipe_time = req.body.recipe_time;
         recipe.recipe_favorites = req.body.recipe_favorites;
 
