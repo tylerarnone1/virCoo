@@ -49,10 +49,8 @@ async componentDidMount() {
         <li><a href="#">Roulette</a></li>
         <li><a href="/create">Contribute</a></li>
         <li><a href="#">Favorites</a></li>
-        <li> <Link to='/login' className='NavBar-link'>LOG IN</Link>
-      &nbsp;&nbsp;|&nbsp;&nbsp;
-      <Link to='/signup' className='NavBar-link'>SIGN UP</Link></li>
-        <span className='NavBar-welcome'>WELCOME, {props.user.name}</span>
+        <li><a href="/login">log in</a></li>
+        
       </ul>
     </nav>
         <h1>VirCoo</h1>

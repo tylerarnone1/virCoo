@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import './Feed.css';
+//import './feed.js';
 
 const Recipe = props => (
     <tr>
@@ -36,27 +38,44 @@ export default class RecipeFeed extends Component {
        });
    }
    
+   
+
     render() {
         return (
             <div>
-                <h2>Recipes</h2>
-                <table className="table table-striped" style={{ marginTop: 20}}>
-              
-               
-                    <tr>
-                        <th>Title</th>
-                        <th>Time</th>
-                        <th>Ingredients</th>
-                        <th>Directions</th>
-
-
-                    </tr>
-
-                    </table>
-                <tbody>
-                   { this.recipeFeed() } 
-                </tbody>
-            </div>
+            <div class="first">
+            <p>welsh onion soko <br />
+            <small>Mustard sierra leone bologi kale chard beet greens black-eyed pea sorrel amaranth garlic tigernut spring onion summer purslane asparagus lentil. </small></p>
+          </div>
+          
+          <div class="second">
+            <p>Prime Rib Au Juis <br />
+            <small>Tri-tip capicola kielbasa salami brisket chicken rump strip steak drumstick. Meatloaf chuck boudin ribeye pork jowl. Andouille bacon jowl meatloaf pork loin prosciutto bresaola.</small></p>
+          </div>
+            
+          <div class="dessert">
+            <p>Triple CheeseCake <br />
+            <small>Lollipop tart cotton candy jelly-o carrot cake apple pie cupcake. Jelly-o bear claw ice cream candy canes.</small></p>
+          </div>
+          <div class="ramen">
+          <p>Shoyu Ramen<br />
+          <small>Traditional Style Ramen with pork, soft boiled and marinated eggs, Geen onion in a Myso bone broth Broth</small></p>
+          <iframe width="720" height="200" src="https://www.youtube.com/embed/aafmrrx7Bh4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          
+          </div>
+          <div>
+              <p>Creamy Garlic Chicken<br />
+              <small>These Chicken and potatoes are deliciously baked in a creamy garlic butter sauce, packed with amazing flavors. A Creamy garlic butter chicken and potatoes recipe that is sure to satisfy your family with comfort.</small></p>
+              <iframe width="720" height="200" src="https://www.youtube.com/embed/1t7VeJ00-hU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+              <div>
+                  <p>Philly Cheese Steak<br />
+                  <small>This Philly Cheese Steak Sandwich is something I learned to make a long ways back, when I was working as a cook at UCR. I’m using La Brea Bakery Torta Rolls on this sandwich, along with my signature Southwest Sauce, which you can find at this link: https://www.youtube.com/watch?v=mdvy6...</small></p>
+                  <iframe width="720" height="200" src="https://www.youtube.com/embed/fO8S7HHoXqY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+                </div>
+          
+          </div>
+                
         )
     }
 }

@@ -1,0 +1,19 @@
+nav{
+    width: 100%;
+  }
+   nav ul {
+     padding: 10px;
+    background: rgba(0,0,0,0.5);
+    align-self: center;
+    
+  }
+  li {
+    display: inline;
+    padding: 0px 20px 0px 20px;
+    
+  }
+  a{
+    color: goldenrod;
+    text-decoration: none;
+  }
+  
