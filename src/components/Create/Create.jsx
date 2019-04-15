@@ -82,6 +82,9 @@ export default class CreateRecipe extends Component {
     render() {
         return (
             <div style={{marginTop: 10 }}>
+            <form action='/images' method="post" enctype="multipart/form-data">
+                 <input type='file' name='image' />
+                        </form>
                 <h3>Submit New Recipe</h3>
                 <form onSubmit={this.onSubmit}>
                 <div className="form-group">

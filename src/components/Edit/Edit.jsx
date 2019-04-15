@@ -6,6 +6,14 @@ export default class EditRecipe extends Component {
     constructor(props) {
         super(props);
 
+        this.onChangeRecipeTitle = this.onChangeRecipeTitle.bind(this);
+            this.onChangeRecipeDirection = this.onChangeRecipeDirection.bind(this);
+            this.onChangeRecipeIngredients = this.onChangeRecipeIngredients.bind(this);
+            this.onChangeRecipeTime = this.onChangeRecipeTime.bind(this);
+            this.onChangeRecipeFavorite = this.onChangeRecipeFavorite.bind(this);
+            this.onSubmit = this.onSubmit.bind(this);
+        
+
         this.state = {
             recipe_title: '',
             recipe_directions: '',
@@ -67,7 +75,14 @@ export default class EditRecipe extends Component {
             recipe_ingredients : this.state.recipe_ingredients,
             recipe_favorites   : this.state.recipe_favorites,
             }
+
+            axios.post('http://localhost:3001/recipes/update/'+ this.props.match.params.id,  obj)
+            .then(res => console.log(res.data));
+
+        this.props.history.push('/');
         }
+       
+
   
     render() {
         return (
@@ -120,19 +135,7 @@ export default class EditRecipe extends Component {
 
                             <label className="form-check-label">yes</label>
                    </div>
-                    <div className="form-check">
-                        <input type="checkbox"
-                                className="form-check-input"
-                                id="Checkbox"
-                                name="Checkbox"
-                                onChange={this.onChangeRecipeFavorites}
-                                checked={this.state.recipe_favorites}
-                                value={this.recipe_favorites} />
-
-                        <label className="form-check-label" htmlFor="Checkbox">
-                        Favorites
-                        </label>
-                    </div>
+                    
                     <br/>
                     <div className='form-group'>
                         <imput type="submit" value="Update Recipe" className="btn btn-primaary"/>

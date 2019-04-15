@@ -8,12 +8,13 @@ const mongoose = require('mongoose');
 const recipeRoutes = express.Router();
 const app = express();
 
-let RecipeSchema = require('./models/recipes');
+
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(cors());
 app.use(bodyParser.json);
+app.use('/', recipeRoutes);
 
 
 //connect database

@@ -5,11 +5,12 @@ const recipeRoutes = express.Router();
 let Recipe = require('./models/recipes');
 
 // Defined store route
-recipeRoutes.route('/add').post(function (req, res) {
+recipeRoutes.route('/create').post(function (req, res) {
   let recipe = new Recipe(req.body);
+  console.log(req.body);
   recipe.save()
     .then(recipe => {
-      res.status(200).json({'recipe': 'recipe in added successfully'});
+      res.status(200).json({'recipe': 'recipe is added successfully'});
     })
     .catch(err => {
     res.status(400).send("unable to save to database");

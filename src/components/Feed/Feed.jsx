@@ -41,8 +41,8 @@ export default class RecipeFeed extends Component {
             <div>
                 <h2>Recipes</h2>
                 <table className="table table-striped" style={{ marginTop: 20}}>
-                </table>
-                <thread>
+              
+               
                     <tr>
                         <th>Title</th>
                         <th>Time</th>
@@ -52,7 +52,7 @@ export default class RecipeFeed extends Component {
 
                     </tr>
 
-                </thread>
+                    </table>
                 <tbody>
                    { this.recipeFeed() } 
                 </tbody>

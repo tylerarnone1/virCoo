@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import userService from './utils/userService';
+
 import './App.css';
 
 import CreateRecipe from "./components/Create/Create";
@@ -9,7 +11,34 @@ import RecipeFeed from "./components/Feed/Feed";
 import SignupForm from './components/SignupFrom/SignupForm';
 
 
-class App extends Component {
+class App extends Component{
+  constructor(){
+    super();
+   
+    this.state = {
+    recipe_title: '',
+    recipe_directions: '',
+    recipe_ingredients: '',
+    recipe_time: '',
+    recipe_favorites: false,
+}
+    
+  }
+handleLogout = () => {
+  userService.logout();
+  this.setState({ user: null });
+}
+
+handleSignupOrLogin = () => {
+  this.setState({user: userService.getUser()});
+}
+async componentDidMount() {
+  const user = userService.getUser();
+  this.setState({ user });
+}
+
+
+
   render() {
     return (
       <Router>
@@ -20,7 +49,10 @@ class App extends Component {
         <li><a href="#">Roulette</a></li>
         <li><a href="/create">Contribute</a></li>
         <li><a href="#">Favorites</a></li>
-        <li><a href="/login">log in</a></li>
+        <li> <Link to='/login' className='NavBar-link'>LOG IN</Link>
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      <Link to='/signup' className='NavBar-link'>SIGN UP</Link></li>
+        <span className='NavBar-welcome'>WELCOME, {props.user.name}</span>
       </ul>
     </nav>
         <h1>VirCoo</h1>
