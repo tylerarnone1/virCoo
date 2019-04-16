@@ -6,7 +6,7 @@ import './App.css';
 import CreateRecipe from "./components/Create/Create";
 import EditRecipe from "./components/Edit/Edit";
 import RecipeFeed from "./components/Feed/Feed";
-
+import SearchRecipe from "./components/Search/Search";
 import LoginPage from './pages/LoginPage/LoginPage';
 import SignupPage from './pages/SignupPage/SignupPage';
 
@@ -50,7 +50,7 @@ async componentDidMount() {
         <nav>
     <ul>
         <li><a href="/">Home</a></li>
-        <li><a href="#">Roulette</a></li>
+        <li><a href="#">Search</a></li>
         <li><a href="/create">Contribute</a></li>
         <li><a href="#">Favorites</a></li>
         <li><a href="/login">log in</a></li>
@@ -65,6 +65,7 @@ async componentDidMount() {
         <Route path="/" exact component={RecipeFeed} />
         <Route path="/edit/:id" component={EditRecipe} />
         <Route path="/create" component={CreateRecipe} />
+        <Route path="/search" component={SearchRecipe} />
         <Route exact path='/signup' render={({ history }) => 
             <SignupPage
               history={history}
