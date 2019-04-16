@@ -17,11 +17,17 @@ const Recipe = props => (
 )
 
 export default class RecipeFeed extends Component {
-   
-   constructor(props) {
-       super(props);
-       this.state = {recipes:[]};
-   }
+    
+    constructor(props) {
+        super(props);
+        this.state = {recipes:[],
+            isShowDescription : false
+        };
+        
+    }
+    
+    
+
    componentDidMount() {
        axios.get('http://localhost:3001/recipes/')
        .then(response => {
@@ -41,6 +47,8 @@ export default class RecipeFeed extends Component {
    
 
     render() {
+            
+        
         return (
             <div>
             <div class="first">
@@ -60,18 +68,18 @@ export default class RecipeFeed extends Component {
           <div class="ramen">
           <p>Shoyu Ramen<br />
           <small>Traditional Style Ramen with pork, soft boiled and marinated eggs, Geen onion in a Myso bone broth Broth</small></p>
-          <iframe width="720" height="200" src="https://www.youtube.com/embed/aafmrrx7Bh4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/aafmrrx7Bh4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           
           </div>
           <div>
               <p>Creamy Garlic Chicken<br />
-              <small>These Chicken and potatoes are deliciously baked in a creamy garlic butter sauce, packed with amazing flavors. A Creamy garlic butter chicken and potatoes recipe that is sure to satisfy your family with comfort.</small></p>
-              <iframe width="720" height="200" src="https://www.youtube.com/embed/1t7VeJ00-hU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <small>These Chicken and potatoes are deliciously baked in a creamy garlic butter  chicken and potatoes recipe that is sure to satisfy your family with comfort.</small></p>
+              <iframe  src="https://www.youtube.com/embed/1t7VeJ00-hU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
               <div>
                   <p>Philly Cheese Steak<br />
-                  <small>This Philly Cheese Steak Sandwich is something I learned to make a long ways back, when I was working as a cook at UCR. I’m using La Brea Bakery Torta Rolls on this sandwich, along with my signature Southwest Sauce, which you can find at this link: https://www.youtube.com/watch?v=mdvy6...</small></p>
-                  <iframe width="720" height="200" src="https://www.youtube.com/embed/fO8S7HHoXqY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+                  <small>This Philly Cheese Steak Sandwich  when I was working as a cook at UCR. https://www.youtube.com/watch?v=mdvy6...</small></p>
+                  <iframe  src="https://www.youtube.com/embed/fO8S7HHoXqY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
                 </div>
           
           </div>

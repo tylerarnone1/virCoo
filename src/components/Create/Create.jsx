@@ -94,7 +94,7 @@ export default class CreateRecipe extends Component {
                             value={this.state.recipe_title}
                             onChange={this.onChangeRecipeTitle}>
                     </input>
-                </div>
+               
             
                     <label>Prep Time: </label>
                     <input  type="text"
@@ -114,7 +114,7 @@ export default class CreateRecipe extends Component {
                             value={this.state.recipe_directions}
                             onChange={this.onChangeRecipeDirection}>
                     </input>
-               
+                    </div>
                 <div className="form-group">
                     <div className="form-check form-check-inline">
                         <input className="form-check-input"
@@ -137,9 +137,11 @@ export default class CreateRecipe extends Component {
 
                             <label className="form-check-label">yes</label>
                 </div>
+               
                 <div className="form-group">
                     <input type="submit" vlaue="Submit" className="btn btn-primary">
                     </input>
+               
                 </div>
                 </form>
          

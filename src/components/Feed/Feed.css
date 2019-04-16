@@ -1,17 +1,25 @@
 div {
     height: 200px;
-    background-size: cover;
+    background-size: 700px;
     position: relative;
     margin: 40px 0 0 0;
     border-radius: 12px;
+    background-repeat: no-repeat;
+    
+  }
+  iframe{
+    height: 200px;
+    width: 700px;
+    overflow: hidden;
+   
   }
 
 p {
     color: rgba(255,255,255,1);
     background: black;
-    background: linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
-    background: -webkit-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
-    background: -moz-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+    background: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,.4));
+    background: -webkit-linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,.4));
+    background: -moz-linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,.4));
     padding: 10px;
     line-height: 30px;
     text-align: justify;
@@ -26,10 +34,10 @@ p {
   small {
     opacity: 0;
   }
-  .show-description p {
+  p :hover {
       height: 150px;
   }
-  .show-description small {
+  small :hover {
     opacity: 1;
   }
   .first{
